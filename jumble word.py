@@ -1,37 +1,37 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Sep 11 22:17:29 2019
-
-@author: raj
-"""
 import time
 from os import name,system
 import random
 
+#Defination for clear screen function.
+#It will note work if you run this file in python shell !!
 def clrscr():
     if(name=='nt'):
         _=system('cls')
     else:
         _=system('clear')
         
-
+#you can add of remove words for choice from following function.
 def choose():
     words=['rainbow','water','computer','science','mathematics','player','game','dedicated','blowing','special','superman','spy','expendetion','expectation','colour','happiness','concentration','hippopotamus','elephant','rhinoceroses']
     pick=random.choice(words)
     return pick
 
+#make the world jumbled.
 def jumble(word):
     jumbled="".join(random.sample(word,len(word)))
     return jumbled
 
+#thank you message.
 def thank(p1n,p2n,p1,p2):
     print(p1n,' Your score is: ',p1)
     print(p2n,' Your score is: ',p2)
     print('Thanks for playing\nHave a nice day')
     time.sleep(2)
+    
+#play function
 def play():
     p1name=input("Player 1, please enter your name ")
-    p2name=input("player 2, please enter your name ")
+    p2name=input("Player 2, please enter your name ")
     print("Let's start the game!!")
     time.sleep(1)
     pp1=0
@@ -70,5 +70,5 @@ def play():
                 thank(p1name,p2name,pp1,pp2)
                 break
         turn+=1
-
-play()
+if __name__ == '__main__' :
+    play()
